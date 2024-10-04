@@ -1,0 +1,33 @@
+<p>my-orders works!</p>
+
+<input type="text" #txtName />
+
+<button (click)="readValue(txtName)">Get Value</button>
+ <label> City : </label> {{studentObj && studentObj.address && studentObj.address.city !== '' ? studentObj.address.city : 'Not Avaialbl'  }}
+
+ 
+<label>City : <span *ngIf="studentObj && studentObj.address && studentObj.address.city !== '' else naTemplate"> 
+    {{ studentObj.address.city}}</span></label>
+
+<ng-template #naTemplate>
+    <p>Not Avaialble</p>
+</ng-template>
+ <ul>
+    <ng-container *ngIf="cityList && cityList.length !== 0" >
+        <li *ngFor="let item of cityList">{{item}}</li>
+    </ng-container>
+   
+ </ul>
+
+ <p *ngIf="isActive">Stuident is Active</p>
+ <p *ngIf="!isActive">Stuident is De-Active</p>
+<!-- 
+ @if()
+
+ @switch () {
+
+ } -->
+
+ <p *ngIf="dayName == 'Mon'">Monday</p>
+ <p *ngIf="dayName == 'Tue'">Monday</p>
+ <p *ngIf="dayName == 'Wed'">Monday</p>
